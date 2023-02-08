@@ -1,0 +1,80 @@
+# Open a code cell in your Jupyter Notebook and write the following code:
+
+
+# Write a multi-line comment with your name, favorite food, and dream job on 3 different lines.
+my_name = "Kenny"
+print("My name is", my_name)
+favorite_food = "banana"
+print("My favorite food is", favorite_food)
+dream_job = "Data Scienist"
+print("My dream job is", dream_job)
+
+
+# assign 5 different data types to 5 different variables. At least one datatype must be a string.
+My_exp = str('new to python!')
+print("I am", My_exp)
+exp = int(1.5)
+print("My experience in coding is less than",exp, "year.")
+age = float(33.5)
+print("I am", age, "years old.")
+job = ["data analyst", "data scienist"]
+print("My Dream job is " + job[1] + ".")
+true = 10 > 9
+print("Struggle is" ,true)
+
+
+# You can check the data type of a value by using `type()`
+print("\nMy exp  ...", type(My_exp))
+print("Age is  ...", type(age))
+print("exp is  ...", type(exp))
+print("job is  ...", type(job))
+print("true is ...", type(true))
+
+
+# print the length of your string.
+new_str = str("what's for dinner") 
+print(new_str)
+print("The length of your string is ", len(new_str))
+
+
+# print the the index value of the 4th character in your string.
+print("The index value of the 4th character = ", new_str[3])
+
+
+# create a new variable called savvy, and assign it the string with this phrase "Learning Data Analytics and Python is Awesome!"
+savvy = "Learning Data Analytics and Python is Awesome!"
+print(savvy)
+
+
+# return a range of characters that slices the above string from the beginning of "ing" up to before "and"
+print(savvy[5:23])
+
+
+# Replace "Awesome" with "great" in the string
+print(savvy.replace("Awesome", "great"))
+
+
+# Test and print the savvy string to see it contains "Python"
+print("True of False that the savvy string contains the word Python:", "Python" in savvy)
+
+
+# Create and assign 3 more variables called name, age and length using the multi-variable naming method.
+name = "Kenny"
+age = str('33 years')
+length = "5 ft 11"  
+
+
+# Format a new string called 'miniBio' using variables in curly brackets to complete this phrase... "Hi my name is (name), I am (tall) and (so) old today."
+miniBio = "Hi my name is {}, I am {} and {} old today."
+
+
+# print 'miniBio'
+print(miniBio.format(name, length, age))
+
+
+# cast and print the age variable to a float.
+miniBio = "Hi my name is {}, I am {} and {} years old today."
+age = float(33.5)
+print(miniBio.format(name, length, age))
+
+
