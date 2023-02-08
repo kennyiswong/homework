@@ -1,0 +1,43 @@
+#Create a list of at least 5 elements of mixed data types
+List = ["First element", 2, 3.0,  [1,2,3,4], {"5" : "6"}, False ]
+#replace a part of it with something else
+List[1:5] = ["blackberry", "watermelon"]
+print("original list ..:", List)
+#append or insert several more items to the list
+List.append("orange")
+print("New appended list .. ", List)
+List.insert(3, "Bananana" )
+print("\ninserted list .. ", List)
+
+#find and print the length of the list
+print("The length of the list ..", len(List))
+
+#slice a sub-section of the 1st list, and save it to a different 2nd list
+print("sub-section of the 1st list..", List)
+list2 = List[1:4]
+
+
+#print the 2nd list
+print("list2 is ..", list2)
+
+#extend your original list with the 2nd list sliced above
+print("List..",List)
+print("List2 ..",list2)
+newlist = List.extend(list2)
+print("Extended firstList with list2: ", newlist)
+
+#Create a new list called "simList" containing at least 5 elements of the same data type, either string, integer, float, or Boolean.
+simList =["cat", "bird", "lion", "monkey", "eagle"]
+print(simList)
+
+#sort "simList", and print the list
+simList.sort()
+print(simList)
+
+#copy the "simList" list to another 3rd list
+list3 = [1,2,3,4] + simList
+print(list3)
+
+#add the 2nd and 3rd lists together into a 4th list
+list4 = list2 + list3
+print(list4)
