@@ -1,0 +1,30 @@
+#Create a file and name it 3.3-Homework (this can be a Python file or a Jupyter Notebook file)
+
+#Create an if statement: if 'age' is greater than or equal to 25, print "Renting a car is more affordable", however if 'age' is less than 25, print "Renting a car is very expensive."
+
+#Create and chain an if-else statement: if 'age' is greater than or equal to 25, print "Renting a car is more affordable." If 'age' is less than 25 but greater than or equal to 18, print "Renting a car is very expensive." Finally, if age is less than 18, print "You cannot legally rent a car."
+
+#Loop over the following string to (1) count all the characters in the string and (2) print out all the vowels -- "The quick brown fox jumps over the lazy dog"
+
+#Write a nested loop that prints out every piece of clothing from the couture list, in every fashionable color from the panettone set: couture = ["trousers", "blouse", "bandana", "cumber band", "blazer", "vest", "french beret", "scarf", "stole"] and panettone = {"cerise", "fuchsia", "aqua", "maple", "auburn", "burnt sienna", "gunmetal blue", "Dark Sapphire"}
+
+#Use range as a loop to calculate the sum of all the numbers from 1 to 100
+
+#Print the second item in this fruits list. ["apple", "banana", "cherry"]
+
+#Change the value from "apple" to "kiwi", in the fruits list. ["apple", "banana", "cherry"]
+
+#Use the append method to add "orange" to the fruits list. ["apple", "banana", "cherry"]
+
+#Use the insert method to add "lemon" as the second item in the fruits list. ["apple", "banana", "cherry"]
+
+#Use the remove method to remove "banana" from the fruits list. ["apple", "banana", "cherry"]
+
+#Use negative indexing to print the 3rd and 2nd to last items in the list. ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
+
+#Use a range of indexes to print the third, fourth, and fifth item in the list. ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
+
+#Use the correct syntax to print the number of items in the list. ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
+
+#Use the correct syntax to sort this list in reverse order ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
+
