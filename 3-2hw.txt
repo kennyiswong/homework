@@ -41,3 +41,106 @@ print(list3)
 #add the 2nd and 3rd lists together into a 4th list
 list4 = list2 + list3
 print(list4)
+
+
+#--------------------------------------------------------------------------------------
+
+
+
+#Create a tuple of about 5 elements
+tup1 = (1, 2, 3, 4, 5)
+print(tup1)
+
+#- multiply your tuple by 3 and save it to a new 2nd tuple
+ 
+tup2 = tup1 * 3
+print("tup2 ...", tup2)
+
+#- access and print the 12th element from the 2nd tuple
+print(tup2[11])
+
+#- sort the 2nd tuple and print it
+print("tup2 sorted ... ", sorted(tup2))
+
+#- copy 4 specific elements from your 2nd tuple to a new 3nd tuple
+tup3 = tup2[2:6]
+print(tup3)
+
+#- unpack the 3rd tuple into 4 variables and print these variables
+print(tup3[0], tup3[1], tup3[2], tup3[3])
+
+#- create a 4th tuple with single item 50 and print this tuple
+tup4 = (50)
+print(tup4)
+
+#- add the 2nd and 3rd tuple together into a 5th tuple and print the tuple
+tup5 = tup2 + tup3
+print(tup5)
+
+
+#-------------------------------------------------------------------------------------
+#Create a dictionary with at least 5 values of different data types
+dict1= {
+   
+   "Brand&model": "Toyota Prius",
+    "electric": True,
+    "Stolen parts": ["converter", "O2 sensor", "resonator"],
+    "repair cost$": 3500,
+    "part waiting time in year": 0.5,}
+    
+print(dict1)
+
+#    - print out 1 value
+
+print(dict1.get("Stolen parts"))
+
+#    - replace any one value in your dictionary with your name
+
+dict1["repair cost$"] = "too much" 
+print(dict1)
+
+#    - add your favorite color to the dictionary
+
+dict1.update({"color": "teal"})
+print(dict1)
+
+#    - add a list, tuple or set to your dictionary
+
+dict1= {
+   
+   "Brand&model": "Toyota Prius",
+    "electric": True,
+    "Stolen parts": ["converter", "O2 sensor", "resonator"],
+    "repair cost$": [],
+    "part waiting time in year": 0.5,}
+    
+dict1["repair cost$"] += [3000, "3k"]
+print(dict1)
+
+#    - print a list of the dictionary keys
+
+x = dict1.keys()
+print(x)
+
+#    - print a list of the dictionary values
+
+x = dict1.values()
+print(x)
+
+#    - copy your 1st dictionary into a 2nd dictionary
+newdict1 = {"Alex": 26, "Brian": 13, "Charles": 12}
+newdict2 = {"David": 46, "Eddie": 33, "Frank": 22}
+newdict2.update( newdict1)
+print(newdict2)
+
+#    - pop an item from the 2nd dictionary, and print the dictionary
+newdict2.popitem()
+print(newdict2)
+
+#    - remove all the elements from the 2nd dictionary and print the result
+newdict2.clear()
+print(newdict2)
+
+#Save your file in your homework folder, and push it to GitHub.
+#Once you have completed all your homework for the week, create a ticket to let the TAs know you have completed it.
+#Remember to add the link to you homework, to the ticket.
