@@ -141,6 +141,8 @@ print(newdict2)
 newdict2.clear()
 print(newdict2)
 
+#-------------------------------------------------------------------------------------------------------
+
 #Save your file in your homework folder, and push it to GitHub.
 #Once you have completed all your homework for the week, create a ticket to let the TAs know you have completed it.
 #Remember to add the link to you homework, to the ticket.
