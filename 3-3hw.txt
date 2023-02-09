@@ -1,16 +1,35 @@
 #Create a file and name it 3.3-Homework (this can be a Python file or a Jupyter Notebook file)
 
 #Create an if statement: if 'age' is greater than or equal to 25, print "Renting a car is more affordable", however if 'age' is less than 25, print "Renting a car is very expensive."
-age = 26
-print("age is", age)
-if age >= 25 :
+
+ age = int(input("What is your age?"))
+ 
+ if age >= 25 :
     print("Renting a car is more affordable")
-if age < 25 :
+ if age < 25 :
     print("Renting a car is very expensive.")
     
-#Create and chain an if-else statement: if 'age' is greater than or equal to 25, print "Renting a car is more affordable." If 'age' is less than 25 but greater than or equal to 18, print "Renting a car is very expensive." Finally, if age is less than 18, print "You cannot legally rent a car."
+    
+# Create and chain an if-else statement: if 'age' is greater than or equal to 25, print "Renting a car is more affordable." If 'age' is less than 25 but greater than or equal to 18, print "Renting a car is very expensive." Finally, if age is less than 18, print "You cannot legally rent a car."
 
-#Loop over the following string to (1) count all the characters in the string and (2) print out all the vowels -- "The quick brown fox jumps over the lazy dog"
+age = int(input("What is your age?"))
+
+if age >= 25 :
+    print("Renting a car is more affordable")
+if (age < 25 and age >= 18):
+    print("Renting a car is very expensive.")
+else:
+   print("You cannot legally rent a car.")
+    
+#Loop over the following string to (1) count all the characters in the string and 
+#(2) print out all the vowels -- "The quick brown fox jumps over the lazy dog"
+
+string = "The quick brown fox jumps over the lazy dog"
+count=len([char for char in string if char not in " "])
+print(count)
+vowels=[char for char in string if char in "aeiouAEIOU"]
+print(vowels)
+
 
 #Write a nested loop that prints out every piece of clothing from the couture list, in every fashionable color from the panettone set: couture = ["trousers", "blouse", "bandana", "cumber band", "blazer", "vest", "french beret", "scarf", "stole"] and panettone = {"cerise", "fuchsia", "aqua", "maple", "auburn", "burnt sienna", "gunmetal blue", "Dark Sapphire"}
 
