@@ -33,3 +33,6 @@ if age < 25 :
 #Use the correct syntax to print the number of items in the list. ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
 
 #Use the correct syntax to sort this list in reverse order ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
+#https://github.com/savvy-coders/dap-curriculum/blob/main/Section03/3.3-Python_FlowControl.ipynb
+#https://www.online-python.com/
+#
