@@ -33,9 +33,24 @@ print(vowels)
 
 #Write a nested loop that prints out every piece of clothing from the couture list, in every fashionable color from the panettone set: couture = ["trousers", "blouse", "bandana", "cumber band", "blazer", "vest", "french beret", "scarf", "stole"] and panettone = {"cerise", "fuchsia", "aqua", "maple", "auburn", "burnt sienna", "gunmetal blue", "Dark Sapphire"}
 
+couture = ["trousers", "blouse", "bandana", "cumber band", "blazer", "vest", "french beret", "scarf", "stole"] 
+panettone = {"cerise", "fuchsia", "aqua", "maple", "auburn", "burnt sienna", "gunmetal blue", "Dark Sapphire"}
+
+for x in couture:
+	for y in panettone:
+		print(x,y) 
+  
 #Use range as a loop to calculate the sum of all the numbers from 1 to 100
 
+sum = 0                     # start with "sum" at 0
+i = 0                       # and "i" at 0  
+for i in range (1,101):     # make "i" go from 1 to 100 while doing the rest
+   sum = sum + i           # increase "sum" by the value of "i"
+print(sum)                  # print out what "sum" is at each step
+
 #Print the second item in this fruits list. ["apple", "banana", "cherry"]
+fruitslist= ["apple", "banana", "cherry"]
+print(fruitslist[1])
 
 #Change the value from "apple" to "kiwi", in the fruits list. ["apple", "banana", "cherry"]
 
