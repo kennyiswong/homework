@@ -1,0 +1,35 @@
+Use a MarkDown file for this section:
+1.	What does one need to do to use a module?
+Anytime you use a module, you must IMPORT it into your program
+
+2.	Name a Module (not the DateTime Nodule) we looked at and write a line or 2 of code as an example using this module.
+	The Math module has a set of methods and constants. 
+	
+	import math	# Import math library
+ 
+math.ceil()	#Rounds a number up to the nearest integer
+math.fabs()	# Returns the absolute value of a number
+
+3.	What is a benefit of using Exception handling?
+With this code device we can keep going past many errors.
+4.	NumPy arrays are like what Python data type?
+NumPy arrays are like lists in Python, arrays are an ordered sequence of elements. Both are also mutable and not fixed in size, which means iItems can be added and removed, making them very flexible to work with.
+5.	What is one of the main benefits of using NumPy arrays.
+Arrays are most useful when we must manipulate values of only one specific data type.
+6.	What is one of the main requirements about the 'dtype' of NumPy arrays?
+The default data type of a NumPy Array is floating point (np.float64).
+7.	Of the 10 uses of NumPy, name 2.
+np.nonzero() = used to count the number of nonzero elements present in array NumPy Count Nonzero Values in Python arrays
+np.view() = create new array object that looks at the same data as the original array
+
+
+8.	Name one of the other libraries we'll use with NumPy?
+Matplotlib and Pandas
+9.	What is the shape of NumPy arrays?
+The shape of an array can be defined as the number of elements in each dimension
+10.	What is a Tensor?
+Tensor is an array with 3+ dimensions
+11.	Name a reason why it's better using NumPy for Data Analysis than using a Python List?
+NumPy arrays are faster and more compact than Python lists.
+12.	When creating an "empty" array, where do the elements come from?
+The function empty creates an array whose initial content is random and depends on the state of the memory.
