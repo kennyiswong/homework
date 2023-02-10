@@ -1,0 +1,72 @@
+#Create a file and name it 3.3-Homework (this can be a Python file or a Jupyter Notebook file)
+
+#Create an if statement: if 'age' is greater than or equal to 25, print "Renting a car is more affordable", however if 'age' is less than 25, print "Renting a car is very expensive."
+
+ age = int(input("What is your age?"))
+ 
+ if age >= 25 :
+    print("Renting a car is more affordable")
+ if age < 25 :
+    print("Renting a car is very expensive.")
+    
+    
+# Create and chain an if-else statement: if 'age' is greater than or equal to 25, print "Renting a car is more affordable." If 'age' is less than 25 but greater than or equal to 18, print "Renting a car is very expensive." Finally, if age is less than 18, print "You cannot legally rent a car."
+
+age = int(input("What is your age?"))
+
+if age >= 25 :
+    print("Renting a car is more affordable")
+if (age < 25 and age >= 18):
+    print("Renting a car is very expensive.")
+else:
+   print("You cannot legally rent a car.")
+    
+#Loop over the following string to (1) count all the characters in the string and 
+#(2) print out all the vowels -- "The quick brown fox jumps over the lazy dog"
+
+string = "The quick brown fox jumps over the lazy dog"
+count=len([char for char in string if char not in " "])
+print(count)
+vowels=[char for char in string if char in "aeiouAEIOU"]
+print(vowels)
+
+
+#Write a nested loop that prints out every piece of clothing from the couture list, in every fashionable color from the panettone set: couture = ["trousers", "blouse", "bandana", "cumber band", "blazer", "vest", "french beret", "scarf", "stole"] and panettone = {"cerise", "fuchsia", "aqua", "maple", "auburn", "burnt sienna", "gunmetal blue", "Dark Sapphire"}
+
+couture = ["trousers", "blouse", "bandana", "cumber band", "blazer", "vest", "french beret", "scarf", "stole"] 
+panettone = {"cerise", "fuchsia", "aqua", "maple", "auburn", "burnt sienna", "gunmetal blue", "Dark Sapphire"}
+
+for x in couture:
+	for y in panettone:
+		print(x,y) 
+  
+#Use range as a loop to calculate the sum of all the numbers from 1 to 100
+
+sum = 0                     # start with "sum" at 0
+i = 0                       # and "i" at 0  
+for i in range (1,101):     # make "i" go from 1 to 100 while doing the rest
+   sum = sum + i           # increase "sum" by the value of "i"
+print(sum)                  # print out what "sum" is at each step
+
+#Print the second item in this fruits list. ["apple", "banana", "cherry"]
+fruitslist= ["apple", "banana", "cherry"]
+print(fruitslist[1])
+
+#Change the value from "apple" to "kiwi", in the fruits list. ["apple", "banana", "cherry"]
+
+#Use the append method to add "orange" to the fruits list. ["apple", "banana", "cherry"]
+
+#Use the insert method to add "lemon" as the second item in the fruits list. ["apple", "banana", "cherry"]
+
+#Use the remove method to remove "banana" from the fruits list. ["apple", "banana", "cherry"]
+
+#Use negative indexing to print the 3rd and 2nd to last items in the list. ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
+
+#Use a range of indexes to print the third, fourth, and fifth item in the list. ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
+
+#Use the correct syntax to print the number of items in the list. ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
+
+#Use the correct syntax to sort this list in reverse order ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
+#https://github.com/savvy-coders/dap-curriculum/blob/main/Section03/3.3-Python_FlowControl.ipynb
+#https://www.online-python.com/
+#
