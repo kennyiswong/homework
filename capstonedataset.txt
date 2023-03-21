@@ -1,0 +1,177 @@
+import pandas as pd
+import numpy as np
+import sqlite3 as sql
+import shutil
+import matplotlib.pyplot as plt
+import matplotlib.dates as mdt
+import datetime as dtm
+
+#connection = sql.connect("C:\\Users\kuwon\Code\SavvyCoders\Homework\input\sf-bay-area-bike-share\newstatus.csv")
+newstatus = pd.read_csv(r"C:\\Users\kuwon\Code\SavvyCoders\Homework\input\sf-bay-area-bike-share\newstatus.csv")
+newstatus.head()
+----------------------------------------------------------
+   station_id  bikes_available  docks_available             time
+0           2                2               25  8/29/2013 12:06
+1           2                2               25  8/29/2013 12:07
+2           2                2               25  8/29/2013 12:08
+3           2                2               25  8/29/2013 12:09
+4           2                2               25  8/29/2013 12:10
+---------------------------------------------------------------
+trips_df = pd.read_csv(r"C:\\Users\kuwon\Code\SavvyCoders\Homework\input\sf-bay-area-bike-share\trip.csv")
+trips_df.head()
+
+-----------------------------------------------------------------------
+     id  duration       start_date        start_station_name  \
+0  4576        63  8/29/2013 14:13  South Van Ness at Market   
+1  4607        70  8/29/2013 14:42        San Jose City Hall   
+2  4130        71  8/29/2013 10:16   Mountain View City Hall   
+3  4251        77  8/29/2013 11:29        San Jose City Hall   
+4  4299        83  8/29/2013 12:02  South Van Ness at Market   
+
+   start_station_id         end_date          end_station_name  \
+0                66  8/29/2013 14:14  South Van Ness at Market   
+1                10  8/29/2013 14:43        San Jose City Hall   
+2                27  8/29/2013 10:17   Mountain View City Hall   
+3                10  8/29/2013 11:30        San Jose City Hall   
+4                66  8/29/2013 12:04            Market at 10th   
+
+   end_station_id  bike_id subscription_type zip_code  
+0              66      520        Subscriber    94127  
+1              10      661        Subscriber    95138  
+2              27       48        Subscriber    97214  
+3              10       26        Subscriber    95060  
+4              67      319        Subscriber    94103 
+------------------------------------------------------------------------------
+stations_df = pd.read_csv(r"C:\\Users\kuwon\Code\SavvyCoders\Homework\input\sf-bay-area-bike-share\station.csv")
+stations_df.head()
+
+-----------------------------------------------------------------------------------
+   id                               name        lat        long  dock_count  \
+0   2  San Jose Diridon Caltrain Station  37.329732 -121.901782          27   
+1   3              San Jose Civic Center  37.330698 -121.888979          15   
+2   4             Santa Clara at Almaden  37.333988 -121.894902          11   
+3   5                   Adobe on Almaden  37.331415 -121.893200          19   
+4   6                   San Pedro Square  37.336721 -121.894074          15   
+
+       city installation_date  
+0  San Jose          8/6/2013  
+1  San Jose          8/5/2013  
+2  San Jose          8/6/2013  
+3  San Jose          8/5/2013  
+4  San Jose          8/7/2013  
+---------------------------------------------------------------------------------------------
+import pandas as pd
+import numpy as np
+import sqlite3 as sql
+import shutil
+import matplotlib.pyplot as plt
+import matplotlib.dates as mdt
+import datetime as dtm
+import numpy as np
+def reduce_mem_usage(df):
+    """ iterate through all the columns of a dataframe and modify the data type
+        to reduce memory usage.        
+    """
+    start_mem = df.memory_usage().sum() / 1024**2
+    print('Memory usage of dataframe is {:.2f} MB'.format(start_mem))
+    for col in df.columns:
+        col_type = df[col].dtype
+        if col_type != object:
+            c_min = df[col].min()
+            c_max = df[col].max()
+            if str(col_type)[:3] == 'int':
+                if c_min > np.iinfo(np.int8).min and c_max < np.iinfo(np.int8).max:
+                    df[col] = df[col].astype(np.int8)
+                elif c_min > np.iinfo(np.int16).min and c_max < np.iinfo(np.int16).max:
+                    df[col] = df[col].astype(np.int16)
+                elif c_min > np.iinfo(np.int32).min and c_max < np.iinfo(np.int32).max:
+                    df[col] = df[col].astype(np.int32)
+                elif c_min > np.iinfo(np.int64).min and c_max < np.iinfo(np.int64).max:
+                    df[col] = df[col].astype(np.int64)  
+            else:
+                if c_min > np.finfo(np.float16).min and c_max < np.finfo(np.float16).max:
+                    df[col] = df[col].astype(np.float16)
+                elif c_min > np.finfo(np.float32).min and c_max < np.finfo(np.float32).max:
+                    df[col] = df[col].astype(np.float32)
+                else:
+                    df[col] = df[col].astype(np.float64)
+
+    end_mem = df.memory_usage().sum() / 1024**2
+    print('Memory usage after optimization is: {:.2f} MB'.format(end_mem))
+    print('Decreased by {:.1f}%'.format(100 * (start_mem - end_mem) / start_mem))
+    return df
+    --------------------------------------------------------------------------------------
+    import pandas as pd
+status_df = reduce_mem_usage(pd.read_csv(r"C:\\Users\kuwon\Code\SavvyCoders\Homework\input\sf-bay-area-bike-share\status.csv"))
+status_df.info()
+--------------------------------------------------------------------------------------------------
+Memory usage of dataframe is 2196.79 MB
+Memory usage after optimization is: 755.15 MB
+Decreased by 65.6%
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 71984434 entries, 0 to 71984433
+Data columns (total 4 columns):
+ #   Column           Dtype 
+---  ------           ----- 
+ 0   station_id       int8  
+ 1   bikes_available  int8  
+ 2   docks_available  int8  
+ 3   time             object
+dtypes: int8(3), object(1)
+memory usage: 755.1+ MB
+----------------------------------------------------------------------------------------------
+status_df
+------------------------------------------------------------------------------------------
+          station_id  bikes_available  docks_available                 time
+0                  2                2               25  2013/08/29 12:06:01
+1                  2                2               25  2013/08/29 12:07:01
+2                  2                2               25  2013/08/29 12:08:01
+3                  2                2               25  2013/08/29 12:09:01
+4                  2                2               25  2013/08/29 12:10:01
+...              ...              ...              ...                  ...
+71984429          84                8                7  2015-08-31 23:55:02
+71984430          84                8                7  2015-08-31 23:56:01
+71984431          84                8                7  2015-08-31 23:57:02
+71984432          84                8                7  2015-08-31 23:58:02
+71984433          84                8                7  2015-08-31 23:59:02
+
+[71984434 rows x 4 columns]
+
+--------------------------------------------------------------------------------------
+import pandas as pd
+weather = pd.read_csv(r"C:\\Users\kuwon\Code\SavvyCoders\Homework\input\sf-bay-area-bike-share\weather.csv")
+weather
+weather.head()
+-----------------------------------------------------------------------------------------
+Output exceeds the size limit. Open the full output data in a text editor
+        date  max_temperature_f  mean_temperature_f  min_temperature_f  \
+0  8/29/2013               74.0                68.0               61.0   
+1  8/30/2013               78.0                69.0               60.0   
+2  8/31/2013               71.0                64.0               57.0   
+3   9/1/2013               74.0                66.0               58.0   
+4   9/2/2013               75.0                69.0               62.0   
+
+   max_dew_point_f  mean_dew_point_f  min_dew_point_f  max_humidity  \
+0             61.0              58.0             56.0          93.0   
+1             61.0              58.0             56.0          90.0   
+2             57.0              56.0             54.0          93.0   
+3             60.0              56.0             53.0          87.0   
+4             61.0              60.0             58.0          93.0   
+
+   mean_humidity  min_humidity  ...  mean_visibility_miles  \
+0           75.0          57.0  ...                   10.0   
+1           70.0          50.0  ...                   10.0   
+2           75.0          57.0  ...                   10.0   
+3           68.0          49.0  ...                   10.0   
+4           77.0          61.0  ...                   10.0   
+
+   min_visibility_miles  max_wind_Speed_mph  mean_wind_speed_mph  \
+0                  10.0                23.0                 11.0   
+1                   7.0                29.0                 13.0   
+2                  10.0                26.0                 15.0   
+...
+2             284.0    94107  
+3             284.0    94107  
+4             277.0    94107  
+
+[5 rows x 24 columns]
